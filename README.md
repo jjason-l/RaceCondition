@@ -2,6 +2,8 @@
 
 4310 Project 7: Race Condition
 
+Github Link: https://github.com/jjason-l/RaceCondition
+
 Program written in Java. Should be able to run fine with java installed .
 
 Task: 
