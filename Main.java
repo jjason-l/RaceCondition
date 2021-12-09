@@ -56,13 +56,16 @@ public class Main {
                     buffer[(next_in + i) % buffer.length] += 1;
                     // operating V
                     V.release(f);
-                }else{
+                }
+                else{
                     break;
                 }
             }
+            // next_in update
             next_in += (k1 % buffer.length);
             System.out.println("Producer <= " + next_in);
 
+            // end program
             end--;
             if(end <= 0){
                 System.out.println("Producer without race problem.");
@@ -75,7 +78,7 @@ public class Main {
     
     public static void consumer() throws InterruptedException {
         while (!check){
-            // consumer thread sleep for random time interval
+            // thread sleep for random time interval
             Thread.sleep((int) (Math.random()*100 + 0));
             // generate random k2 between 0 and buffer size.
             int k2 = random.nextInt(BUFFER_SIZE) + 0;
@@ -103,6 +106,7 @@ public class Main {
                 System.out.println("Consumer without race problem.");
                 check = true;
             }
+            //thread sleep for random time interval
             Thread.sleep((int) (Math.random()*100 + 0));
         }
     }    
